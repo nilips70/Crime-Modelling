@@ -6,49 +6,31 @@ This paper delves into the changes in crime trends in England and Wales from 201
 
 **Authors:** Niloufar Pourshir Sefidi, Amin Shoari Nejad, Peter Mooney
 
+## Repository Structure
 
+### 1) Data:
+This folder contains the datasets used for this study. Some datasets are sizeable and thus have not been included directly due to GitHub's size constraints. However, links for downloading these datasets have been provided:
 
-# Repository Structure
-**Step 1: Data Retrieval**
+#### Crime Data:
+Historical street crime data from the UK can be retrieved from the UK POLICE archive. [Access data here](https://data.police.uk/data/archive/[year]-[month].zip). Once downloaded, the CSV files from this archive should be consolidated into a single folder.
 
+#### Stringency Index Data:
+This dataset contains the stringency index values specifically for the 'United Kingdom'. [Access the dataset here](https://ourworldindata.org/explorers/coronavirus-data-explorer?uniformYAxis=0&country=~GBR&hideControls=true&Interval=7-day+rolling+average&Relative+to+Population=true&Color+by+test+positivity=false&Metric=Stringency+index).
 
-Retrieve the historical data on street crime in the UK from the UK POLICE archive.
+#### UK Local Authorities Boundaries Shapefile:
+The shapefile detailing the boundaries of local authorities in the UK can be found [here](https://geoportal.statistics.gov.uk/datasets/196d1a072aaa4882a50be333679d4f63/explore?location=32.483421%2C-48.094640%2C3.86).
 
-Link to UK POLICE Archive
+### 2) Codes:
+This section comprises the codebase employed for preprocessing, analysis, and visualization.
 
-**Step 2: Data Consolidation**
+- **attaching_crime_data.ipynb**: This Python script merges all crime data, attaching the relevant local authority codes to the LSOA codes present in the crime dataset.
+  
+- **data_preparation_excluding_manchester.R**: Given the unavailability of data for Greater Manchester Police post-July 2019, this file contains the R script responsible for excluding the Manchester data from the generated dataset.
+  
+- **heatmap_timeseries_stringency_viz.R**: Contains the code to create a time series plot showcasing the stringency index for the UK, spanning 2020 to 2022. It also provides visualizations in the form of heatmaps and time series for different crime types mentioned in the paper.
 
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-After downloading the street crime data, which is organized by month and year in compressed zip files, consolidate all the CSV files into a singular folder within the specified directory.
-
-**Step 3: Data Linking**
-
-
-Use the Python script named attaching_crime_data.ipynb to merge all the crime data and associate the local authority codes with the LSOA codes present in the crime dataset.
-
-**Step 4: Data Cleaning**
-
-
-Due to the absence of data for Greater Manchester Police since July 2019, this police force has been excluded from our study. To remove the Manchester data from the aggregated crime dataset (from Step 3), utilize the code in the data_preparation_excluding_manchester.R file.
-
-**Step 5: Stringency Index Data Retrieval**
-
-
-Fetch the dataset containing the stringency index values and filter it to only encompass data related to the 'United Kingdom'.
-
-Link to Stringency Index Data
-
-For generating a time series plot depicting the stringency index for the UK for the years 2020 to 2022, refer to the stringency_plot.R file.
-
-**Step 6: Visualization**
-
-
-For the creation of a time series plot illustrating the stringency index for the UK (from 2020 to 2022) and the heatmap plus time series visualizations for different crime types, refer to the code in heatmap_timeseries_stringency_viz.R.
-
-**Step 7: Geospatial Data**
-
-
-The shapefile for the boundaries of the local authorities in the UK can be accessed from the link provided:
-
-Local Authorities Boundaries Shapefile
-
+## Acknowledgments
+We wish to express our gratitude to [affiliations/organizations] for their continued support and assistance throughout the course of this research.
