@@ -8,7 +8,7 @@ This paper delves into the changes in crime trends in England and Wales from 201
 
 
 
-# Steps & Details
+# Repository Structure
 **Step 1: Data Retrieval**
 
 
