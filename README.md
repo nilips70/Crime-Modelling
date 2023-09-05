@@ -12,8 +12,9 @@ This paper delves into the changes in crime trends in England and Wales from 201
 This folder contains the datasets used for this study. Some datasets are sizeable and thus have not been included directly due to GitHub's size constraints. However, links for downloading these datasets have been provided:
 
 #### Crime Data:
-Historical street crime data from the UK can be retrieved from the UK POLICE archive. [Access data here]https://data.police.uk/data/archive/[year]-[month].zip
-Once downloaded, the CSV files from this archive should be consolidated into a single folder.
+Historical street crime data from the UK can be retrieved from the UK POLICE archive from below. Once downloaded, the CSV files from this archive should be consolidated into a single folder.
+https://data.police.uk/data/archive/[year]-[month].zip
+
 
 #### Stringency Index Data:
 This dataset contains the stringency index values specifically for the 'United Kingdom'. [Access the dataset here](https://ourworldindata.org/explorers/coronavirus-data-explorer?uniformYAxis=0&country=~GBR&hideControls=true&Interval=7-day+rolling+average&Relative+to+Population=true&Color+by+test+positivity=false&Metric=Stringency+index).
