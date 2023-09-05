@@ -1,9 +1,9 @@
 # Unmasking Lockdown Effects: Crime Rates Across England and Wales' Local Authorities
+**Abstract:** This paper delves into the changes in crime trends in England and Wales from 2015 to 2023. Our aim was to explore how the stringency index and the pandemic affected different crime types across various regions in England and Wales. We utilized the Bayesian spatiotemporal model to discern the effects of the stringency index on crime. For accounting for spatial and temporal dependencies, the Conditional Auto-regressive (CAR) model was implemented using INLA in R.
+
 **Authors:** Niloufar Pourshir Sefidi, Amin Shoari Nejad, Peter Mooney
 
 
-Abstract:
-This paper delves into the changes in crime trends in England and Wales from 2015 to 2023. Our aim was to explore how the stringency index and the pandemic affected different crime types across various regions in England and Wales. We utilized the Bayesian spatiotemporal model to discern the effects of the stringency index on crime. For accounting for spatial and temporal dependencies, the Conditional Auto-regressive (CAR) model was implemented using INLA in R.
 
 Steps & Details:
 Step 1:
