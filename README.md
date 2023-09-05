@@ -31,8 +31,7 @@ This section comprises the codebase employed for preprocessing, analysis, and vi
   
 - **heatmap_timeseries_stringency_viz.R**: Contains the code to create a time series plot showcasing the stringency index for the UK, spanning 2020 to 2022. It also provides visualizations in the form of heatmaps and time series for different crime types mentioned in the paper.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Acknowledgments
-We wish to express our gratitude to [affiliations/organizations] for their continued support and assistance throughout the course of this research.
+## Contact
+
+If you have any questions or need further assistance, please contact the corresponding author, Pourshir Sefidi, at niloufar.pourshirsefidi.2022@mumail.ie
