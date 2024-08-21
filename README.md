@@ -12,12 +12,16 @@ This paper delves into the changes in crime trends in England and Wales from 201
 This folder contains the datasets used for this study. Some datasets are sizeable and thus have not been included directly due to GitHub's size constraints. However, links for downloading these datasets have been provided:
 
 #### Crime Data:
-Historical street crime data from the UK can be retrieved from the UK POLICE archive from below. Once downloaded, the CSV files from this archive should be consolidated into a single folder.
+Raw historical street crime data from the UK can be retrieved from the UK POLICE archive from the below link. This dataset is not included in the repository because it exceeds GitHub's size limit. However, a summarized and final version is included under the name `la_street_data_all.parquet`.
 https://data.police.uk/data/archive/[year]-[month].zip
+
+#### LSOA to LA Code Converter Data:
+A table containing the LSOA codes in the UK and their corresponding LA codes is available in the `lasoa_la_uk.csv` file.
 
 
 #### Stringency Index Data:
-This dataset contains the stringency index values specifically for the 'United Kingdom'. [Access the dataset here](https://ourworldindata.org/explorers/coronavirus-data-explorer?uniformYAxis=0&country=~GBR&hideControls=true&Interval=7-day+rolling+average&Relative+to+Population=true&Color+by+test+positivity=false&Metric=Stringency+index).
+This dataset contains the stringency index values specifically for the 'United Kingdom'. [Download the dataset here](https://ourworldindata.org/explorers/coronavirus-data-explorer?uniformYAxis=0&country=~GBR&hideControls=true&Interval=7-day+rolling+average&Relative+to+Population=true&Color+by+test+positivity=false&Metric=Stringency+index).
+This data is also available in the repo under the name `owid-covid-data.csv`.
 
 #### UK Local Authorities Boundaries Shapefile:
 The shapefile detailing the boundaries of local authorities in the UK can be found [here](https://geoportal.statistics.gov.uk/datasets/196d1a072aaa4882a50be333679d4f63/explore?location=32.483421%2C-48.094640%2C3.86).
