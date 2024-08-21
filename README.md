@@ -8,7 +8,7 @@ This paper delves into the changes in crime trends in England and Wales from 201
 
 ## Repository Structure
 
-### 1) data:
+### 1) DATA:
 This folder contains the datasets used for this study. Some datasets are sizeable and thus have not been included directly due to GitHub's size constraints. However, links for downloading these datasets have been provided:
 
 #### Crime Data:
@@ -22,7 +22,7 @@ This dataset contains the stringency index values specifically for the 'United K
 #### UK Local Authorities Boundaries Shapefile:
 The shapefile detailing the boundaries of local authorities in the UK can be found [here](https://geoportal.statistics.gov.uk/datasets/196d1a072aaa4882a50be333679d4f63/explore?location=32.483421%2C-48.094640%2C3.86).
 
-### 2) codes:
+### 2) CODE:
 This section comprises the codebase employed for preprocessing, analysis, and visualization.
 
 - **attaching_crime_data.ipynb**: This Python script merges all crime data, attaching the relevant local authority codes to the LSOA codes present in the crime dataset.
