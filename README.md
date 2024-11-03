@@ -42,8 +42,3 @@ Due to the unavailability of data for Greater Manchester Police after July 2019,
 The R code for fitting the model to the data is available in this script.
 
 - **heatmap_timeseries_stringency_viz.R**: Contains the R code to create a time series plot showcasing the stringency index for the UK, spanning 2020 to 2022. It also provides visualizations in the form of heatmaps and time series for different crime types mentioned in the paper.
-
-
-## Contact
-
-If you have any questions or need further assistance, please contact the corresponding author, Pourshir Sefidi, at niloufar.pourshirsefidi.2022@mumail.ie
