@@ -78,7 +78,7 @@ map_effects = function(df, polygones, fitted_model, uncertainty_bound = 'middle'
 }
 
 
-# -------------------------------- Modelling London data -----------------------------------------
+# -------------------------------- Modelling UK data -----------------------------------------
 
 # -------- New code (Can be used for other types of crimes) 
 
@@ -86,18 +86,29 @@ g <- poly2nb(shapefile) # Extracting adjacency matrix
 image(inla.graph2matrix(g),xlab=NULL,ylab=NULL, main= "Adjacency Matrix")
 
 # Fitting INLA
-res_london <- inla(formula, family = "poisson", data = df_inla , control.predictor = list(compute = TRUE))
+res_uk <- inla(formula, family = "poisson", data = df_inla , control.predictor = list(compute = TRUE))
 
 # Evaluating the model results
-df_inla$count <- res_london$summary.fitted.values[, "mean"] #Expectation
+df_inla$count <- res_uk$summary.fitted.values[, "mean"] #Expectation
+
 # ----- Plotting 
 #(c <- plot_risk(df_inla) )
 # ----- Mapping stringency index
-p_low = map_effects(df_inla, la_uk, res_london, uncertainty_bound = 'low')
-p_mid = map_effects(df_inla, la_uk, res_london, uncertainty_bound = 'middle')
-p_high = map_effects(df_inla, la_uk, res_london, uncertainty_bound = 'high')
+p_low = map_effects(df_inla, la_uk, res_uk, uncertainty_bound = 'low') +
+  ggtitle("Percentile: 2.5%")
 
-ggpubr::ggarrange(p_low, p_mid, p_high, ncol = 3, nrow = 1)
+p_mid = map_effects(df_inla, la_uk, res_uk, uncertainty_bound = 'middle') +
+  ggtitle("Percentile: 50%")
 
+p_high = map_effects(df_inla, la_uk, res_uk, uncertainty_bound = 'high') +
+  ggtitle("Percentile: 97.5%")
+
+combined_plot = ggpubr::ggarrange(p_low, p_mid, p_high, ncol = 3, nrow = 1)
+
+ggsave(filename = "Violence and sexual offences map.png",  
+  plot = combined_plot,
+  width = 12,    
+  height = 6,    
+  dpi = 600)
 
 
