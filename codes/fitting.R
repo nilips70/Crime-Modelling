@@ -78,6 +78,7 @@ map_effects = function(df, polygones, fitted_model, uncertainty_bound = 'middle'
 # -------------------------------- Modelling UK data -----------------------------------------
 
 # -------- New code (Can be used for other types of crimes) 
+# df_inla can be created for different crime types in data_preprocessing.r
 
 g <- poly2nb(shapefile) # Extracting adjacency matrix
 image(inla.graph2matrix(g),xlab=NULL,ylab=NULL, main= "Adjacency Matrix")
