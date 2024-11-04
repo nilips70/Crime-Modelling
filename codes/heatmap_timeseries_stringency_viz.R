@@ -75,33 +75,49 @@ test_bulgary = left_join(locs_months, df %>% filter(`Crime type` == {target_crim
 
 # visualization
 p1 = test_bulgary %>% 
-  ggplot() + geom_tile(aes(x = Month, y = la_id, fill = z_value)) +
+  ggplot() + 
+  geom_tile(aes(x = Month, y = la_id, fill = z_value)) +
   scale_fill_gradient2(midpoint = 0, low = "darkgreen", mid = "white", high = "red") + 
   geom_vline(xintercept = as.Date("2020-03-01"), linetype = 'dashed') +
   geom_vline(xintercept = as.Date("2022-05-22"), linetype = 'dashed') +
-  theme_classic() + #ggtitle(paste0({target_crime})) + 
-  labs( x = "Date",y = "Local Authorities", caption = "(b)") +
-  theme(legend.position = "top", 
-        axis.text.x = element_text(angle = 45, vjust = 0.5),
-        plot.caption = element_text(hjust = 0.5)) 
-  #scale_y_continuous(breaks = seq(0, 339, by = 10))
+  theme_classic() + 
+  ggtitle(paste0({target_crime})) + 
+  labs(x = "Date", y = "Local Authorities") + #, caption = "(b)") +
+  theme(
+    legend.position = "top",
+    axis.text.x = element_text(size = 8, angle = 45, vjust = 0.5), # Font size for x-axis text
+    axis.text.y = element_text(size = 8), # Font size for y-axis text
+    axis.title.x = element_text(size = 10), # Font size for x-axis label
+    axis.title.y = element_text(size = 10), # Font size for y-axis label
+    plot.title = element_text(size = 13),   # Font size for title
+    plot.caption = element_text(size = 8, hjust = 0.5), # Font size for caption
+    legend.text = element_text(size = 8)   # Font size for legend text
+  )
+
 
 p2 = test_bulgary %>% 
   group_by(Month) %>% 
   summarise(count = sum(count)) %>% 
   ungroup() %>% 
-  ggplot(aes(x = Month, y = count)) + geom_point() + geom_line() +
-  geom_vline(xintercept = as.Date("2020-03-01"), linetype = 'dashed') + 
-  geom_vline(xintercept = as.Date("2022-05-22"), linetype = 'dashed') +
-  labs( x = "Date", y = "Total Crime Count", caption = "(a)") +
-  theme_classic() + #ggtitle({target_crime}) + 
-  theme(axis.text.x   = element_text(angle = 45, vjust = 0.5),
-                                                    plot.caption = element_text(hjust = 0.5)) 
+  ggplot(aes(x = Month, y = count)) + 
+  geom_point() + 
+  geom_line() + 
+  geom_vline(xintercept = as.Date("2020-03-01"), linetype = 'dashed', color = "red") + 
+  geom_vline(xintercept = as.Date("2022-05-22"), linetype = 'dashed', color = "green") +
+  labs(x = "Date", y = "Total Crime Count") + #, caption = "(a)") + 
+  theme_classic() + 
+  ggtitle(paste0({target_crime})) +
+  theme(
+    axis.text.x = element_text(size = 8, angle = 45, vjust = 0.5),  # Font size for x-axis text
+    axis.text.y = element_text(size = 8),                           # Font size for y-axis text
+    axis.title.x = element_text(size = 13),                          # Font size for x-axis label
+    axis.title.y = element_text(size = 10))                          # Font size for y-axis label 
 
 
 #ggpubr::ggarrange(p2, p1,  ncol = 1, nrow = 2)
 
-
+# Save the plot with high resolution and larger dimensions
+ggsave("Violence and sexual offences t.png", plot = last_plot(), dpi = 600, width = 8, height = 6, units = "in")
 ###################################################################
 #                   to check valididty of the shapefile
 # whether it has all the local authorities and boundries of the study region
